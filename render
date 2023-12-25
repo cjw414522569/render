@@ -10,8 +10,15 @@ RUN apt-get update && \
 # 设置 root 用户的密码为 'root'
 RUN echo 'root:frepai' | chpasswd
 
-# 暴露 22 端口
+# 暴露常用端口
 EXPOSE 22
+EXPOSE 80
+EXPOSE 8080
+EXPOSE 443
+EXPOSE 1111
+EXPOSE 8888
+EXPOSE 888
+EXPOSE 21
 
 # 启动 Shellinabox
 CMD ["/usr/bin/shellinaboxd", "-t", "-s", "/:LOGIN"]
